@@ -87,4 +87,30 @@ document.addEventListener('DOMContentLoaded', () => {
 	}, observerOptions);
 
 	sections.forEach(section => observer.observe(section));
+
+	// Contact panel toggle (sideways dropdown)
+	const contactToggle = document.querySelector('.contact-toggle');
+	const contactPanel = document.querySelector('.contact-panel');
+	const contactBody = document.getElementById('contact-body');
+	if (contactToggle && contactPanel && contactBody) {
+		contactToggle.addEventListener('click', (e) => {
+			const isOpen = contactPanel.classList.toggle('open');
+			contactToggle.setAttribute('aria-expanded', String(isOpen));
+			if (isOpen) {
+				contactBody.hidden = false;
+			} else {
+				contactBody.hidden = true;
+			}
+		});
+
+		// Close contact panel on Escape
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && contactPanel.classList.contains('open')) {
+				contactPanel.classList.remove('open');
+				contactToggle.setAttribute('aria-expanded', 'false');
+				contactBody.hidden = true;
+				contactToggle.focus();
+			}
+		});
+	}
 });
