@@ -41,6 +41,36 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
+	// Mobile nav toggle (fallback) - supports .nav-toggle and #primary-navigation
+	const navToggle = document.querySelector('.nav-toggle');
+	const navLinks = document.getElementById('primary-navigation');
+	if (navToggle && navLinks) {
+		navToggle.addEventListener('click', () => {
+			const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+			navToggle.setAttribute('aria-expanded', String(!expanded));
+			navLinks.classList.toggle('show');
+		});
+
+		// Close menu on Escape
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && navLinks.classList.contains('show')) {
+				navLinks.classList.remove('show');
+				navToggle.setAttribute('aria-expanded', 'false');
+				navToggle.focus();
+			}
+		});
+
+		// Close when clicking a nav link
+		navLinkItems.forEach((link) => {
+			link.addEventListener('click', () => {
+				if (navLinks.classList.contains('show')) {
+					navLinks.classList.remove('show');
+					navToggle.setAttribute('aria-expanded', 'false');
+				}
+			});
+		});
+	}
+
 	// Highlight nav link for visible section using IntersectionObserver
 	const sections = Array.from(document.querySelectorAll('main section[id]'));
 	const observerOptions = { root: null, rootMargin: '-35% 0px -40% 0px', threshold: 0 };
