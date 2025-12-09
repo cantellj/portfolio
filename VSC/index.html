@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation">
+            <a class="logo" href="#home">Joel Cantell</a>
+            <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Menu">
+                <span class="hamburger"></span>
+            </button>
+            <ul id="primary-navigation" class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <video id="hero-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture controlsList="nodownload nofullscreen noremoteplayback" oncontextmenu="return false;" aria-hidden="true" role="presentation">
+                <source src="video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-inner">
+                <h1>Hello — I'm Joel.</h1>
+                <p>I'm a web developer from Finland at the very beginning of his journey.</p>
+                <a class="btn btn-primary" href="#skills">View Skills</a>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, optio dolorum. Libero eos facere doloremque assumenda molestiae commodi rerum dolores ipsa eveniet suscipit soluta itaque nesciunt modi quo, temporibus fugit..</p>
+            </div>
+        </section>
+
+        
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2>Skills</h2>
+                <ul class="skills-list">
+                    <li>HTML basics</li>
+                    <li>CSS basics</li>
+                    <li>AI Agent fundamentals</li> 
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tortor vitae urna faucibus tincidunt. Integer vitae lorem in sapien fermentum posuere. Sed euismod, nisl at convallis placerat, urna arcu gravida nulla, vitae ultrices dolor nibh ut nisl.</p>
+            </div>
+        </section>
+
+        
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <p class="contact-links">
+                    <a href="https://github.com/cantellj" target="_blank" rel="noopener noreferrer">
+                        <img src="github-mark-white.png" alt="GitHub" width="28" height="28" style="vertical-align:middle;margin-right:8px">Github
+                    </a>
+                    &nbsp;&nbsp;
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                        <img src="InBug-White.png" alt="LinkedIn" width="28" height="28" style="vertical-align:middle;margin-right:8px">LinkedIn
+                    </a>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">Joel Cantell 2025</div>
+    </footer>
+
+    <script src="scripts.js" defer></script>
+</body>
+</html>
