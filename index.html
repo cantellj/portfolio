@@ -18,27 +18,18 @@
             </button>
             <ul id="primary-navigation" class="nav-links">
                 <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
-                
             </ul>
 
-            <!-- Contact panel in header (toggle + dropdown) -->
-            <div class="contact-panel header-contact">
-                <button class="contact-toggle" aria-controls="contact-body" aria-expanded="false">Contact</button>
-                <div id="contact-body" class="contact-body" hidden>
-                    
-                    <p class="contact-links">
-                        <a href="https://github.com/cantellj" target="_blank" rel="noopener noreferrer">
-                            <img src="github-mark-white.png" alt="GitHub" width="28" height="28"> Github
-                        </a>
-                        &nbsp;&nbsp;
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                            <img src="InBug-White.png" alt="LinkedIn" width="28" height="28"> LinkedIn
-                        </a>
-                    </p>
-                </div>
+            <div class="nav-contact">
+                <a href="https://github.com/cantellj" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <img src="github-mark-white.png" alt="GitHub" width="24" height="24">
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <img src="InBug-White.png" alt="LinkedIn" width="24" height="24">
+                </a>
             </div>
         </nav>
     </header>
@@ -51,7 +42,23 @@
             <div class="hero-inner">
                 <h1>Hello — I'm Joel.</h1>
                 <p>I'm a web developer from Finland at the very beginning of his journey.</p>
-                <a class="btn btn-primary" href="#skills">View Skills</a>
+            </div>
+        </section>
+
+         <section id="skills" class="section">
+            <div class="container">
+                <h2>Skills</h2>
+                <ul class="skills-list">
+                    <li>
+                        <img src="https://www.w3.org/html/logo/downloads/HTML5_Badge.svg" alt="HTML5" class="skill-icon" width="20" height="20">
+                        HTML basics
+                    </li>
+                    <li>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3" class="skill-icon" width="20" height="20">
+                        CSS basics
+                    </li>
+                    <li>AI Agent fundamentals</li> 
+                </ul>
             </div>
         </section>
 
@@ -64,16 +71,7 @@
 
         
 
-        <section id="skills" class="section">
-            <div class="container">
-                <h2>Skills</h2>
-                <ul class="skills-list">
-                    <li>HTML basics</li>
-                    <li>CSS basics</li>
-                    <li>AI Agent fundamentals</li> 
-                </ul>
-            </div>
-        </section>
+       
 
         <section id="projects" class="section projects">
             <div class="container">

@@ -1,47 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-	const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
-	const dropdownMenu = document.querySelector('.dropdown-menu');
 	const navLinkItems = document.querySelectorAll('.nav-link');
 
-	// Dropdown toggle behavior
-	if (dropdownToggle && dropdownMenu) {
-		const setExpanded = (value) => dropdownToggle.setAttribute('aria-expanded', String(value));
-
-		dropdownToggle.addEventListener('click', (e) => {
-			const isOpen = dropdownMenu.classList.toggle('show');
-			setExpanded(isOpen);
-			if (isOpen) dropdownMenu.querySelector('a')?.focus();
-		});
-
-		// Close on outside click
-		document.addEventListener('click', (e) => {
-			if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target) && dropdownMenu.classList.contains('show')) {
-				dropdownMenu.classList.remove('show');
-				setExpanded(false);
-			}
-		});
-
-		// Close on Escape
-		document.addEventListener('keydown', (e) => {
-			if (e.key === 'Escape' && dropdownMenu.classList.contains('show')) {
-				dropdownMenu.classList.remove('show');
-				setExpanded(false);
-				dropdownToggle.focus();
-			}
-		});
-	}
-
-	// Close dropdown when a nav link is clicked (useful for mobile)
-	navLinkItems.forEach((link) => {
-		link.addEventListener('click', () => {
-			if (dropdownMenu && dropdownMenu.classList.contains('show')) {
-				dropdownMenu.classList.remove('show');
-				dropdownToggle && dropdownToggle.setAttribute('aria-expanded', 'false');
-			}
-		});
-	});
-
-	// Mobile nav toggle (fallback) - supports .nav-toggle and #primary-navigation
+	// Mobile nav toggle
 	const navToggle = document.querySelector('.nav-toggle');
 	const navLinks = document.getElementById('primary-navigation');
 	if (navToggle && navLinks) {
@@ -87,30 +47,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	}, observerOptions);
 
 	sections.forEach(section => observer.observe(section));
-
-	// Contact panel toggle (sideways dropdown)
-	const contactToggle = document.querySelector('.contact-toggle');
-	const contactPanel = document.querySelector('.contact-panel');
-	const contactBody = document.getElementById('contact-body');
-	if (contactToggle && contactPanel && contactBody) {
-		contactToggle.addEventListener('click', (e) => {
-			const isOpen = contactPanel.classList.toggle('open');
-			contactToggle.setAttribute('aria-expanded', String(isOpen));
-			if (isOpen) {
-				contactBody.hidden = false;
-			} else {
-				contactBody.hidden = true;
-			}
-		});
-
-		// Close contact panel on Escape
-		document.addEventListener('keydown', (e) => {
-			if (e.key === 'Escape' && contactPanel.classList.contains('open')) {
-				contactPanel.classList.remove('open');
-				contactToggle.setAttribute('aria-expanded', 'false');
-				contactBody.hidden = true;
-				contactToggle.focus();
-			}
-		});
-	}
 });
